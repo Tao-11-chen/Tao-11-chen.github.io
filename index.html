@@ -30,7 +30,7 @@
                 <a href="mailto:yuantaochen973@gmail.com">Email</a> &nbsp/&nbsp
                 <a href="data/JonBarron-CV.pdf">CV</a> &nbsp/&nbsp
                 <a href="https://scholar.google.com.hk/citations?hl=zh-CN&pli=1&user=rVSzbhUAAAAJ">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://twitter.com/jon_barron">Twitter</a> &nbsp/&nbsp
+                <a href="https://twitter.com/YuantaoChen">Twitter</a> &nbsp/&nbsp
                 <a href="https://github.com/Tao-11-chen">Github</a>
               </p>
             </td>
@@ -51,13 +51,24 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-          <tr onmouseout="nerfsuper_stop()" onmouseover="nerfsuper_start()">
+          <tr onmouseout="AsyncNeRF_stop()" onmouseover="AsyncNeRF_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='AsyncNeRF'>
+                <div class="two" id='AsyncNeRF_img'>
                   <img src="images/AsyncNeRF.png" width="180">
                 </div>
+                <img src='images/AsyncNeRF_after.png' width="180">
               </div>
+              <script type="text/javascript">
+                function AsyncNeRF_start() {
+                  document.getElementById('AsyncNeRF_img').style.opacity = "1";
+                }
+
+                function AsyncNeRF_stop() {
+                  document.getElementById('AsyncNeRF_img').style.opacity = "0";
+                }
+                AsyncNeRF_stop()
+              </script>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <br><br>
@@ -76,13 +87,24 @@
           </tr>
       
       
-          <tr onmouseout="nerfsuper_stop()" onmouseover="nerfsuper_start()">
+          <tr onmouseout="LATITUDE_stop()" onmouseover="LATITUDE_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='AsyncNeRF'>
+                <div class="two" id='LATITUDE_img'>
                   <img src="images/LATITUDE.png" width="180">
                 </div>
+                <img src="images/LATITUDE_after.png" width="180">
               </div>
+              <script type="text/javascript">
+                function LATITUDE_start() {
+                  document.getElementById('LATITUDE_img').style.opacity = "1";
+                }
+
+                function LATITUDE_stop() {
+                  document.getElementById('LATITUDE_img').style.opacity = "0";
+                }
+                LATITUDE_stop()
+              </script>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <br><br>
