@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Dagger: Densely Anchored Gaussian Fields for Geometry-informed Neural Digital Cities">
+  <meta name="keywords" content="Dagger: Densely Anchored Gaussian Fields for Geometry-informed Neural Digital Cities">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dagger: Densely Anchored Gaussian Fields for Geometry-informed Neural Digital Cities</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./static/css/bootstrap-4.4.1.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/dagger.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+  <script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
+</head>
+
+
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h2 class="title is-2 publication-title" style="margin-bottom: 0; margin-bottom: 0"><strong>Dagger: Densely Anchored Gaussian Fields for Geometry-informed Neural Digital Cities</strong></h1>
+          <br>
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://tao-11-chen.github.io/">Yuantao Chen</a><sup>1,2</sup></span>
+            <span class="author-block">
+              Zhuo Yang<sup>1,3</sup></span>
+            <span class="author-block">
+              Ming Gao<sup>1,4</sup>
+            </span>
+            <span class="author-block">
+              Songen gu<sup>1,5</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://bigcileng.github.io/">Nana Wang</a><sup>1,6</sup>
+            </span>
+            <span class="author-block">
+              Liyi Luo<sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/fromandto">Hao Zhao</a><sup>†1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Institute for AI Industry Research (AIR), Tsinghua University</span>
+            <br>
+            <span class="author-block"><sup>2</sup>XAUAT</span>
+            <span class="author-block"><sup>3</sup>Beijing Institute of Technology</span>
+            <span class="author-block"><sup>4</sup>University of Pittsburgh</span>
+            <span class="author-block"><sup>5</sup>UCAS</span>
+            <span class="author-block"><sup>5</sup>Tongji University</span>    
+          </div>
+        
+          <br>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper(Coming soon)</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv(Coming soon)</span>
+                </a>
+              </span>
+          
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Tao-11-chen/Dagger"
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                      <i class="fab fa-dribbble"></i>
+                  </span>
+                  <span>Trained Models(Coming soon)</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <video class="video" width="100%" id="fig1" loop playsinline autoplay muted src="resources/universal_compare.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+          <canvas height=0 class="videoMerge" id="fig1Merge"></canvas>
+          <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+            <b>TL;DR</b>: We introduce Dagger, which represents densely anchored Gaussian fields for geometry-informed learning, that can reconstruct large-scale city scenes using sparse UAV captured images with photorealistic appearance and high-accuracy geometry.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3" style="margin-top: -40px">Motivation</h2>
+          <img src="resources/teaser.png" class="center">
+          <div class="content has-text-justified">
+            <p style="margin-top: 0px">
+                Using Gaussian Splatting (GS) for neural digital city rendering is promising due 
+                to GS's fast rendering speed. However, as shown in (a), the vanilla GS performs poor 
+                for city-scale scenes. Our densely anchored Gaussian field (Dagger) improves the rendering 
+                quality significantly as (b) shows. The second row zooms in the red box regions of the 
+                first row. Two key techniques of Dagger (<b>densely</b> and <b>anchored</b>) are highly 
+                related to geometry. To systematically evaluate geometry, we contribute the first high-quality 
+                synthetic city with mesh ground truth. The third row shows our geometry (e) is much 
+                better than vanilla GS (d). As (d/e) visualization is achieved by setting the opacity 
+                of all Gaussians to infinity, floaters turn into white highlights, e.g., rooftop in (d).
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Animation. -->
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" style="margin-top: -40px">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+                Gaussian Splatting (GS), a novel representation free of neural network evaluation,
+                is naturally suitable for digital city reconstruction and visualization because GS
+                is efficient in both training and inference while achieving good rendering quality. 
+                But adapting Gaussian fields for large-scale city modelling is very challenging and 
+                we identify that a key issue is geometry. Specifically, GS uses structure-from-motion 
+                (SfM) point clouds for initialization, but city-scale scenes have large flat grounds 
+                and repetitive man-made structures, making reliable SfM point clouds sparse. Meanwhile
+                , due to overfitting caused by limited aerial views, GS is prone to Gaussian center 
+                and scale drift. These geometry-centered challenges also negatively impact novel view 
+                synthesis performance. To this end, we propose the algorithm Dagger which represents 
+                densely anchored Gaussian fields for geometry-informed learning. There are two key 
+                techniques in Dagger: dense initialization and Gaussian anchoring. We reveal that 
+                these two techniques closely collaborate with each other and only adopting one of them 
+                leads to limited success. Specifically, dense initialization without anchoring would 
+                drag the Gaussians (roughly) along the gravity direction thus violates the geometry. 
+                Sparse initialization with anchoring leads to anchored Gaussians to aggressively 
+                deform to fit the training viewpoints and violates the geometry. When combined together
+                , they effectively regularize the geometry of GS and improve the novel view synthesis 
+                quality. Besides, since there is no high-quality large-scale digital city benchmarks 
+                with mesh ground truth, we contribute the very first one. Our benchmark is a well-developed 
+                toolbox that involves baseline methods and evaluation interfaces (especially geometry-related). 
+                Our experiments systematically show that Dagger out-performs vanilla GS in terms of both 
+                rendering quality and geometry.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="comparison">
+    <div class="container is-max-desktop">
+      <div class="compare-body">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="margin-top: -10px">Magic-City Datasets</h2>
+            <img src="resources/universal.png" alt="universal_data">
+            <h4 class="title is-4" style="margin-top: 0px">MC-Universal</h4>
+            <img src="resources/freeway.png" alt="universal_data">
+            <h4 class="title is-4" style="margin-top: 0px">MC-Freeway</h4>
+            <img src="resources/buildings.png" alt="universal_data">
+            <h4 class="title is-4" style="margin-top: 0px">MC-Buildings</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="comparison">
+    <div class="container is-max-desktop">
+      <div class="compare-body">
+        <div class="row is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="margin-top: 40px">Comparisons</h2>
+            <video class="video" width="100%" id="fig2" loop playsinline autoplay muted src="resources/freeway_compare.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+            <canvas height=0 class="videoMerge" id="fig2Merge"></canvas>
+            <h4 class="title is-4" style="margin-top: 0px">MC-Freeway Dataset</h4>
+
+            <video class="video" width="100%" id="fig3" loop playsinline autoplay muted src="resources/buildings_compare.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+            <canvas height=0 class="videoMerge" id="fig3Merge"></canvas>
+            <h4 class="title is-4" style="margin-top: 0px">MC-Buildings Dataset</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="row is-centered ">
+      <div class="col-12 text-center">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -10px">More Results</h2>
+        <div class="sketchfab-embed-wrapper"> 
+            <iframe title="Universal_mesh" width=960 height=720 allow="autoplay; fullscreen; xr-spatial-tracking" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/b2728a965b814d049732156a05aa60e7/embed"> </iframe> 
+        </div>
+        <h4 class="title is-4" style="margin-top: 0px">Mesh extracted from our trained GS model</h4>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{song2024sags,
+      title={Dagger: Densely Anchored Gaussian Fields for Geometry-informed Neural Digital Cities}, 
+      author={Yuantao Chen and Zhuo Yang and Ming Gao and Songen Gu and Nana Wang and Liyi Luo and Hao Zhao},
+      year={2024},
+      eprint={},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template. 
+            The video comparison with sliding bar is from <a href="https://dorverbin.github.io/refnerf/">Ref-NeRF</a>. 
+          </p>
+        </div>
+      </div>
+          <p></p>
+        </div>
+      </div>
+</footer>
+
+</body>
+</html>
