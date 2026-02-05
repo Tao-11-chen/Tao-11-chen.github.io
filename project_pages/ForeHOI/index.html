@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos">
+  <meta name="keywords" content="ForeHOI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./static/css/bootstrap-4.4.1.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/ForeHOI.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h2 class="title is-2 publication-title" style="margin-bottom: 0; margin-bottom: 0"><strong>ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos</strong></h1>
+          <br>
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://tao-11-chen.github.io/">Yuantao Chen</a><sup>1</sup></span>,
+            <span class="author-block">
+              <a href="https://github.com/hugoycj">Jiahao Chang</a><sup>1,2</sup></span>,
+            <span class="author-block">
+              <a href="https://github.com/hugoycj">Chongjie Ye</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              Chaoran Zhang<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Zhaojie Fang<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://kevinlee09.github.io/">Chenghong Li</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://gaplab.cuhk.edu.cn/">Xiaoguang Han</a><sup>†1,2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>SSE, CUHKSZ,  </span>
+            <span class="author-block"><sup>2</sup>FNii, CUHKSZ</span>  
+          </div>
+        
+          <br>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- ArXiv Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+          
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Tao-11-chen/ForeHOI"
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="https://ai.forehoi.org/"
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                    🤗
+                  </span>
+                  <span>Live Demo</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <video width="100%" loop playsinline autoplay muted controls>
+            <source src="resources/ForeHOI.mp4" type="video/mp4">
+          </video>
+          <canvas height=0 class="videoMerge" id="fig1Merge"></canvas>
+          <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+            <b>TL;DR</b>: We introduce ForeHOI, the first <b>feed-forward</b> 3D object reconstruction model from daily hand-object interaction videos.
+             Given <b>partially observed</b> video input, our framework simultaneously <b>completes 2D/3D objects</b> and estimates their <b>poses</b>.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" style="margin-top: -40px">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+            The ubiquity of monocular videos capturing daily hand-object interactions presents a valuable resource for embodied intelligence. 
+            While 3D hand reconstruction from in-the-wild videos has seen significant progress, reconstructing the involved objects remains 
+            challenging due to severe occlusions and the complex, coupled motion of the camera, hands, and object. In this paper, we introduce ForeHOI, 
+            a novel feed-forward model that directly reconstructs 3D object geometry from monocular hand-object interaction videos within one minute 
+            of inference time, eliminating the need for any pre-processing steps. Our key insight is that, the joint prediction of 2D mask inpainting 
+            and 3D shape completion in a feed-forward framework can effectively address the problem of severe occlusion in monocular hand-held object videos, 
+            thereby achieving results that outperform the performance of optimization-based methods. The information exchanges between the 2D and 3D shape 
+            completion boosts the overall reconstruction quality, enabling the framework to effectively handle severe hand-object occlusion. Furthermore, 
+            to support the training of our model, we contribute the first large-scale, high-fidelity synthetic dataset of hand-object interactions with 
+            comprehensive annotations. Extensive experiments demonstrate that ForeHOI achieves state-of-the-art performance in object reconstruction, 
+            significantly outperforming previous methods with around a 100x speedup.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="comparison">
+    <div class="container is-max-desktop">
+      <div class="compare-body">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3" style="margin-top: -10px">Pipeline</h2>
+            <img src="resources/pipeline.png" alt="pipeline">
+            <p class="content has-text-justified" style="margin-top: 20px; padding: 0 40px;">
+              Given a monocular video of hand-object interaction, we adopt a diffusion-based framework that jointly performs 2D object mask inpainting and 3D object completion to address the reconstruction challenge posed by severe hand-object occlusion. Moreover, the accurate object shape reconstruction achieved by our method leads to precise 3D object pose estimation through post-processing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered" style="margin-top: 20px">In-the-wild Results</h2>
+
+    <!-- Horizontal scrolling gallery -->
+    <div style="overflow-x: auto; white-space: nowrap; padding: 20px 0;">
+
+      <!-- Item 1 -->
+      <div style="display: inline-block; width: 600px; margin-right: 20px; vertical-align: top;">
+        <div style="display: flex; gap: 2px;">
+          <video style="width: 50%; height: 300px; object-fit: contain;" muted loop controls src="resources/wild1.mp4"></video>
+          <model-viewer style="width: 50%; height: 300px; border: 1px solid black;"
+            src="resources/wild1.glb"
+            exposure="0.5"
+            camera-orbit="180deg 90deg 60%"
+            shadow-intensity="0.8"
+            camera-controls touch-action="none">
+          </model-viewer>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div style="display: inline-block; width: 600px; margin-right: 20px; vertical-align: top;">
+        <div style="display: flex; gap: 2px;">
+          <video style="width: 50%; height: 300px; object-fit: contain;" muted loop controls src="resources/wild2.mp4"></video>
+          <model-viewer style="width: 50%; height: 300px; border: 1px solid black;"
+            src="resources/wild2.glb"
+            exposure="0.5"
+            camera-orbit="180deg 90deg 60%"
+            shadow-intensity="0.8"
+            camera-controls touch-action="none">
+          </model-viewer>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div style="display: inline-block; width: 600px; margin-right: 20px; vertical-align: top;">
+        <div style="display: flex; gap: 2px;">
+          <video style="width: 50%; height: 300px; object-fit: contain;" muted loop controls src="resources/wild3.mp4"></video>
+          <model-viewer style="width: 50%; height: 300px; border: 1px solid black;"
+            src="resources/wild3.glb"
+            exposure="0.5"
+            camera-orbit="180deg 90deg 60%"
+            shadow-intensity="0.8"
+            camera-controls touch-action="none">
+          </model-viewer>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div style="display: inline-block; width: 600px; margin-right: 20px; vertical-align: top;">
+        <div style="display: flex; gap: 2px;">
+          <video style="width: 50%; height: 300px; object-fit: contain;" muted loop controls src="resources/wild4.mp4"></video>
+          <model-viewer style="width: 50%; height: 300px; border: 1px solid black;"
+            src="resources/wild4.glb"
+            exposure="0.5"
+            camera-orbit="180deg 90deg 60%"
+            shadow-intensity="0.8"
+            camera-controls touch-action="none">
+          </model-viewer>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div style="display: inline-block; width: 600px; margin-right: 20px; vertical-align: top;">
+        <div style="display: flex; gap: 2px;">
+          <video style="width: 50%; height: 300px; object-fit: contain;" muted loop controls src="resources/wild5.mp4"></video>
+          <model-viewer style="width: 50%; height: 300px; border: 1px solid black;"
+            src="resources/wild5.glb"
+            exposure="0.5"
+            camera-orbit="180deg 90deg 60%"
+            shadow-intensity="0.8"
+            camera-controls touch-action="none">
+          </model-viewer>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div style="display: inline-block; width: 600px; margin-right: 20px; vertical-align: top;">
+        <div style="display: flex; gap: 2px;">
+          <video style="width: 50%; height: 300px; object-fit: contain;" muted loop controls src="resources/wild6.mp4"></video>
+          <model-viewer style="width: 50%; height: 300px; border: 1px solid black;"
+            src="resources/wild6.glb"
+            exposure="0.5"
+            camera-orbit="180deg 90deg 60%"
+            shadow-intensity="0.8"
+            camera-controls touch-action="none">
+          </model-viewer>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template. 
+            The video comparison with sliding bar is from <a href="https://dorverbin.github.io/refnerf/">Ref-NeRF</a>. 
+          </p>
+        </div>
+      </div>
+          <p></p>
+        </div>
+      </div>
+</footer>
+
+</body>
+</html>
